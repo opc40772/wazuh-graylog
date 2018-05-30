@@ -1,0 +1,301 @@
+{
+  "order": -1,
+  "template": "wazuh-alerts-3_*",
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "analyzer_keyword": {
+            "filter": "lowercase",
+            "tokenizer": "keyword"
+          }
+        }
+      },
+      "max_result_window": "1000000"
+    }
+  },
+  "mappings": {
+    "aliases": {},
+    "message": {
+      "properties": {
+        "HOUR": {
+          "type": "keyword"
+        },
+        "ISO8601_TIMEZONE": {
+          "type": "keyword"
+        },
+        "MINUTE": {
+          "type": "keyword"
+        },
+        "MONTHDAY": {
+          "type": "keyword"
+        },
+        "MONTHNUM": {
+          "type": "keyword"
+        },
+        "SECOND": {
+          "type": "keyword"
+        },
+        "TIMESTAMP_ISO8601": {
+          "type": "date"
+        },
+        "YEAR": {
+          "type": "keyword"
+        },
+        "agent_id": {
+          "type": "keyword"
+        },
+        "agent_ip": {
+          "type": "keyword"
+        },
+        "agent_ip_city_name": {
+          "type": "keyword"
+        },
+        "agent_ip_country_code": {
+          "type": "keyword"
+        },
+        "agent_ip_geolocation": {
+          "type": "string",
+          "copy_to": "agent_location"
+        },
+        "agent_location": {
+          "type": "geo_point"
+        },
+        "agent_name": {
+          "type": "keyword"
+        },
+        "data_command": {
+          "type": "keyword"
+        },
+        "data_data": {
+          "type": "keyword"
+        },
+        "data_dstuser": {
+          "type": "keyword"
+        },
+        "data_euid": {
+          "type": "keyword"
+        },
+        "data_file": {
+          "type": "keyword"
+        },
+        "data_gid": {
+          "type": "keyword"
+        },
+        "data_home": {
+          "type": "keyword"
+        },
+        "data_id": {
+          "type": "keyword"
+        },
+        "data_pwd": {
+          "type": "keyword"
+        },
+        "data_script": {
+          "type": "keyword"
+        },
+        "data_shell": {
+          "type": "keyword"
+        },
+        "data_srcip": {
+          "type": "keyword"
+        },
+        "data_srcip_city_name": {
+          "type": "keyword"
+        },
+        "data_srcip_country_code": {
+          "type": "keyword"
+        },
+        "data_srcip_geolocation": {
+          "type": "keyword",
+          "copy_to": "src_location"
+        },
+        "src_location": {
+          "type": "geo_point"
+        },
+        "data_srcport": {
+          "type": "keyword"
+        },
+        "data_srcuser": {
+          "type": "keyword"
+        },
+        "data_title": {
+          "type": "keyword"
+        },
+        "data_tty": {
+          "type": "keyword"
+        },
+        "data_type": {
+          "type": "keyword"
+        },
+        "data_uid": {
+          "type": "keyword"
+        },
+        "decoder_name": {
+          "type": "keyword"
+        },
+        "decoder_parent": {
+          "type": "keyword"
+        },
+        "facility": {
+          "type": "keyword"
+        },
+        "file": {
+          "type": "keyword"
+        },
+        "full_log": {
+          "type": "keyword"
+        },
+        "full_message": {
+          "type": "text",
+          "analyzer": "standard"
+        },
+        "gl2_remote_ip": {
+          "type": "keyword"
+        },
+        "gl2_remote_port": {
+          "type": "keyword"
+        },
+        "gl2_source_input": {
+          "type": "keyword"
+        },
+        "gl2_source_node": {
+          "type": "keyword"
+        },
+        "id": {
+          "type": "keyword"
+        },
+        "input_type": {
+          "type": "keyword"
+        },
+        "location": {
+          "type": "keyword"
+        },
+        "manager_name": {
+          "type": "keyword"
+        },
+        "message": {
+          "type": "text",
+          "analyzer": "standard"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "offset": {
+          "type": "long"
+        },
+        "predecoder_hostname": {
+          "type": "keyword"
+        },
+        "predecoder_program_name": {
+          "type": "keyword"
+        },
+        "predecoder_timestamp": {
+          "type": "keyword"
+        },
+        "previous_log": {
+          "type": "keyword"
+        },
+        "previous_output": {
+          "type": "keyword"
+        },
+        "real_timestamp": {
+          "type": "date"
+        },
+        "rule_cis": {
+          "type": "keyword"
+        },
+        "rule_description": {
+          "type": "keyword"
+        },
+        "rule_firedtimes": {
+          "type": "long"
+        },
+        "rule_groups": {
+          "type": "keyword"
+        },
+        "rule_id": {
+          "type": "keyword"
+        },
+        "rule_level": {
+          "type": "long"
+        },
+        "rule_mail": {
+          "type": "boolean"
+        },
+        "rule_pci_dss": {
+          "type": "keyword"
+        },
+        "source": {
+          "type": "text",
+          "analyzer": "analyzer_keyword",
+          "fielddata": true
+        },
+        "streams": {
+          "type": "keyword"
+        },
+        "syscheck_event": {
+          "type": "keyword"
+        },
+        "syscheck_gid_after": {
+          "type": "keyword"
+        },
+        "syscheck_gname_after": {
+          "type": "keyword"
+        },
+        "syscheck_inode_after": {
+          "type": "long"
+        },
+        "syscheck_inode_before": {
+          "type": "long"
+        },
+        "syscheck_md5_after": {
+          "type": "keyword"
+        },
+        "syscheck_md5_before": {
+          "type": "keyword"
+        },
+        "syscheck_mtime_after": {
+          "type": "date",
+          "format": "dateOptionalTime"
+        },
+        "syscheck_mtime_before": {
+          "type": "date",
+          "format": "dateOptionalTime"
+        },
+        "syscheck_path": {
+          "type": "keyword"
+        },
+        "syscheck_perm_after": {
+          "type": "keyword"
+        },
+        "syscheck_sha1_after": {
+          "type": "keyword"
+        },
+        "syscheck_sha1_before": {
+          "type": "keyword"
+        },
+        "syscheck_size_after": {
+          "type": "keyword"
+        },
+        "syscheck_size_before": {
+          "type": "keyword"
+        },
+        "syscheck_uid_after": {
+          "type": "keyword"
+        },
+        "syscheck_uname_after": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss.SSS"
+        },
+        "type": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
